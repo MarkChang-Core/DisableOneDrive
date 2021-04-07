@@ -1,8 +1,6 @@
 # 如何關閉OneDrive在Client端的文件夾存取權
 
-## 透過 PowerShell 關閉Client端文件夾存取權
-
-### 關閉單一使用者
+## 關閉單一使用者
 
 Step 1. 透過系統管理員身分開啟PowerShell ISE
 
@@ -44,7 +42,7 @@ Step 4. 最後請輸入以下指令以關閉使用者OneDrive在Client端的文�
 
 --------
 
-### 關閉多位使用者
+## 關閉多位使用者
 
 首先，我們需要先調閱所有使用者的OneDrive URL，才可進行批量的csv檔案匯入關閉，請參考以下步驟。<br>
 
@@ -65,3 +63,33 @@ Step 3. 確認清單後，請點選上方的「匯出」連結，以將所有的
 Step 4. 接著請將上述清單整理為 .csv 檔案格式，內容僅需包含欲關閉的URL清單。<br>
 
 ![GITHUB](image/image8.jpg) <br>
+
+Step 5. 依據前述的步驟，以系統管理員身分執行 PowerShell ISE
+
+![GITHUB](image/image4.jpg) <br>
+
+Step 6. 安裝 SharePoint Module，請輸入以下指令 (執行過程需要一段時間安裝)，並在過程中點選 **全部皆是(A)** <br>
+
+若執行完成跳出橘色文字之警示訊息，可忽略。
+
+```Install-Module -Name Microsoft.Online.SharePoint.PowerShell```
+
+![GITHUB](image/image5.jpg) <br>
+
+Step 7. 連結 SharePoint Admin Center 請輸入以下指令 <br>
+
+```Connect-SPOService -Url https://xxx-admin.sharepoint.com``` <br>
+
+其中 xxx 位置為您的 SharePoint Admin Center 網址，此網址可於 SharePoint Admin Center中查看其URL<br>
+
+輸入指令後，請於彈跳出之登入視窗中，登入您的全域管理員或SharePoint管理員帳號<br>
+
+![GITHUB](image/image6.jpg) <br>
+
+Step 8. 最後請輸入以下指令以關閉前述清單中的使用者OneDrive在Client端的文件夾存取權
+
+```Import-csv "C:\Users\nrosni\OneDrive\Documents\disableonedrive.csv" | foreach {Get-SPOSite $_.Identity | Set-SPOSite -LockState NoAccess}```
+
+其中 C:\Users\nrosni\OneDrive\Documents\disableonedrive.csv 請替換為前項 csv 檔案所存在之路徑與檔案名稱，
+
+執行完成後即可關閉該清單中之使用者於Client端OneDrive訪問存取權
