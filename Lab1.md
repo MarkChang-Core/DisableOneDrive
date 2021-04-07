@@ -8,8 +8,8 @@ Step 1. 請以全域管理者或SharePoint 管理員身分登入 [https://admin.
 
 Step 2. 在左方導覽列中選擇「報告 > 使用情況」(你可能需要往下捲動至最底端選擇「檢視更多」) <br>
 
-![GITHUB](https://github.com/MarkChang-Core/DisableOneDrive/image/image1.jpg) <br>
+![GITHUB](image/image1.jpg) <br>
 
 Step 3. 確認清單後，請點選上方的「匯出」連結，以將所有的OneDrive URL匯出 <br>
 
-![GITHUB](https://github.com/MarkChang-Core/DisableOneDrive/image/image2.jpg) <br>
+![GITHUB](image/image.jpg) <br>
