@@ -12,4 +12,4 @@ Step 2. 在左方導覽列中選擇「報告 > 使用情況」(你可能需要�
 
 Step 3. 確認清單後，請點選上方的「匯出」連結，以將所有的OneDrive URL匯出 <br>
 
-![GITHUB](image/image.jpg) <br>
+![GITHUB](image/image2.jpg) <br>
