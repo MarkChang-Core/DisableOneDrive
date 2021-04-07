@@ -38,12 +38,26 @@ Step 3. 連結 SharePoint Admin Center 請輸入以下指令 <br>
 
 ```Connect-SPOService -Url https://xxx-admin.sharepoint.com``` <br>
 
-其中 xxx 位置為您的 SharePoint Admin Center 網址，此網址可於 Microsoft 365 Admin Center中察看，<br>
+其中 xxx 位置為您的 SharePoint Admin Center 網址，此網址可於 Microsoft 365 Admin Center中查看，<br>
 
 查看位置為：**Microsoft 365 Admin Center > 系統管理中心 > SharePoint** <br>
 
 進入後之URL即為 SharePoint Admin Center <br>
 
-輸入指令後，<br>
+輸入指令後，請於彈跳出之登入視窗中，登入您的全域管理員或SharePoint管理員帳號<br>
+
+![GITHUB](image/image6.jpg) <br>
+
+Step 4. 最後請輸入以下指令以關閉使用者OneDrive在Client端的文件夾存取權
+
+```$OneDriveSiteURL = "https://xxxxxx-my.sharepoint.com/personal/xxxx_nrosni_onmicrosoft_com"```
+
+```Get-SPOSite -Identity $OneDriveSiteURL | Set-SPOSite -LockState NoAccess```
+
+其中 xxxxxxx 為欲關閉之使用者 OneDrive URL，若不清楚此資訊，可於Microsoft 365 Admin Center中查看，
+
+查看位置為：**Microsoft 365 Admin Center > 使用者 > 作用中的使用者 > 選擇使用者 > OneDrive > 產生連結***
+
+![GITHUB](image/image7.jpg) <br>
 
 ### 關閉多位使用者
