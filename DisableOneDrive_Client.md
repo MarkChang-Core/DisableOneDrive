@@ -90,6 +90,6 @@ Step 8. 最後請輸入以下指令以關閉前述清單中的使用者OneDrive�
 
 ```Import-csv "C:\Users\nrosni\OneDrive\Documents\disableonedrive.csv" | foreach {Get-SPOSite $_.Identity | Set-SPOSite -LockState NoAccess}```
 
-其中 C:\Users\nrosni\OneDrive\Documents\disableonedrive.csv 請替換為前項 csv 檔案所存在之路徑與檔案名稱，
+其中 C:\Users\mark\OneDrive\Documents\disableonedrive.csv 請替換為前項 csv 檔案所存在之路徑與檔案名稱，
 
 執行完成後即可關閉該清單中之使用者於Client端OneDrive訪問存取權
