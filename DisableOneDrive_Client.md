@@ -88,7 +88,7 @@ Step 7. 連結 SharePoint Admin Center 請輸入以下指令 <br>
 
 Step 8. 最後請輸入以下指令以關閉前述清單中的使用者OneDrive在Client端的文件夾存取權
 
-```Import-csv "C:\Users\nrosni\OneDrive\Documents\disableonedrive.csv" | foreach {Get-SPOSite $_.Identity | Set-SPOSite -LockState NoAccess}```
+```Import-csv "C:\Users\mark\OneDrive\Documents\disableonedrive.csv" | foreach {Get-SPOSite $_.Identity | Set-SPOSite -LockState NoAccess}```
 
 其中 C:\Users\mark\OneDrive\Documents\disableonedrive.csv 請替換為前項 csv 檔案所存在之路徑與檔案名稱，
 
