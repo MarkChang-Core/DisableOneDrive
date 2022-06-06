@@ -34,6 +34,10 @@ Step 4. 最後請輸入以下指令以關閉使用者OneDrive在Client端的文�
 
 ```Get-SPOSite -Identity $OneDriveSiteURL | Set-SPOSite -LockState NoAccess```
 
+※ 若要開放使用者存取權，則可將 ```NoAccess``` 更換為 ```UnLock``` 或是要限制使用者為唯獨，則更換為 ```ReadOnly```
+
+參考資訊：https://docs.microsoft.com/zh-tw/sharepoint/manage-lock-status
+
 其中 xxxxxxx 為欲關閉之使用者 OneDrive URL，若不清楚此資訊，可於Microsoft 365 Admin Center中查看，
 
 查看位置為：**Microsoft 365 Admin Center > 使用者 > 作用中的使用者 > 選擇使用者 > OneDrive > 產生連結**
