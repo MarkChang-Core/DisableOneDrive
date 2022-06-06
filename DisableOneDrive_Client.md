@@ -94,6 +94,10 @@ Step 8. 最後請輸入以下指令以關閉前述清單中的使用者OneDrive�
 
 ```Import-csv "C:\Users\mark\OneDrive\Documents\disableonedrive.csv" | foreach {Get-SPOSite $_.Identity | Set-SPOSite -LockState NoAccess}```
 
+  ***若要開放使用者存取權，則可將 ```NoAccess``` 更換為 ```UnLock``` 或是要限制使用者為唯獨，則更換為 ```ReadOnly```***
+
+  ***參考資訊：https://docs.microsoft.com/zh-tw/sharepoint/manage-lock-status***
+
 其中 C:\Users\mark\OneDrive\Documents\disableonedrive.csv 請替換為前項 csv 檔案所存在之路徑與檔案名稱，
 
 執行完成後即可關閉該清單中之使用者於Client端OneDrive訪問存取權
